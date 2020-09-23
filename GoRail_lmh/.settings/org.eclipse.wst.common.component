@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="GoRail_lmh">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/goRail.sqlmap"/>
+        <property name="java-output-path" value="/GoRail_lmh/build/classes"/>
+        <property name="context-root" value="GoRail_lmh"/>
+    </wb-module>
+</project-modules>

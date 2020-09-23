@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>p_ServletTest</display-name>
+<!--   <servlet> -->
+<!--     <servlet-name>T04_ErrorHandler</servlet-name> -->
+<!--     <servlet-class>kr.or.ddit.basic.T04_ErrorHandler</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>T04_ErrorHandler</servlet-name> -->
+<!--     <url-pattern>/T04_ErrorHandler</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <error-page> -->
+<!--     <error-code>404</error-code> -->
+<!--     <location>/T04_ErrorHandler</location> -->
+<!--   </error-page> -->
+  
+<!--   <error-page> -->
+<!--     <exception-type>java.lang.Throwable</exception-type> -->
+<!--     <location>/T04_ErrorHandler</location> -->
+<!--   </error-page> -->
+  
+  <filter>
+    <filter-name>CustomEncodingFilter</filter-name>
+    <filter-class>board_filter.CustomEncodingFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>CustomEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>dispatcher-servlet</servlet-name>
+    <servlet-class>board_controller.FrontController</servlet-class>
+    <init-param>
+      <param-name>handler-config</param-name>
+      <param-value>/WEB-INF/handler.properties</param-value>
+    </init-param>
+    <load-on-startup>8</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>dispatcher-servlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

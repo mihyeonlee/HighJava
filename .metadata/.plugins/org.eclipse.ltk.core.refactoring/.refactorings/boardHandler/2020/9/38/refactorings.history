@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FrontController.java&apos; to &apos;GoRail_lmh/src/goRail.controller&apos;&#x0D;&#x0A;- Original project: &apos;boardHandler&apos;&#x0D;&#x0A;- Destination element: &apos;GoRail_lmh/src/goRail.controller&apos;&#x0D;&#x0A;- Original element: &apos;board.controller.FrontController.java&apos;" description="Copy compilation unit" destination="=GoRail_lmh/src&lt;goRail.controller" element1="/src&lt;board.controller{FrontController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1600043099774" units="1" version="1.0"/>
+</session>

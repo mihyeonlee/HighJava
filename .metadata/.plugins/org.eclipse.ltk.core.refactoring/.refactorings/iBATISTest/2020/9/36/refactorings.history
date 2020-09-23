@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 packages to &apos;ServletTest/src&apos;&#x0D;&#x0A;- Original project: &apos;iBATISTest&apos;&#x0D;&#x0A;- Destination element: &apos;ServletTest/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     iBATISTest/src/kr.or.ddit.member.vo&#x0D;&#x0A;     iBATISTest/src/kr.or.ddit.member.main&#x0D;&#x0A;     iBATISTest/src/kr.or.ddit.util&#x0D;&#x0A;     iBATISTest/src/kr.or.ddit.member.dao&#x0D;&#x0A;     iBATISTest/src/kr.or.ddit.member.service" description="Copy packages" destination="=ServletTest/src" element1="/src&lt;kr.or.ddit.member.vo" element2="/src&lt;kr.or.ddit.member.main" element3="/src&lt;kr.or.ddit.util" element4="/src&lt;kr.or.ddit.member.dao" element5="/src&lt;kr.or.ddit.member.service" flags="589830" fragments="5" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1599178513055" version="1.0"/>
+</session>

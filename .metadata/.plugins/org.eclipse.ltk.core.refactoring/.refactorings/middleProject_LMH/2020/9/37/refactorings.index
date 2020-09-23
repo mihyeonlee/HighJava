@@ -1,0 +1,16 @@
+1599892818435	Rename package 'goRail.VO'
+1599894958875	Rename type 'NoticeAdminService'
+1599895245221	Delete element
+1599895361662	Move compilation unit
+1599895407101	Move compilation unit
+1599895921093	Move compilation unit
+1599895927867	Move compilation unit
+1599898013303	Delete element
+1599898081839	Delete element
+1599898427993	Rename package 'goRail.adminMain.regist.station.controller'
+1599898435987	Rename package 'goRail.adminMain.regist.station.dao'
+1599898446930	Rename package 'goRail.adminMain.regist.station.service'
+1599900289999	Rename type 'ICartAdmindao'
+1599900466190	Rename type 'IChatbotDao'
+1599900476465	Rename type 'ICartService'
+1599900485712	Rename type 'CartServiceImpl'

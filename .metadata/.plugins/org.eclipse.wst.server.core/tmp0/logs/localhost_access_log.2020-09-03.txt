@@ -1,0 +1,5 @@
+127.0.0.1 - - [03/Sep/2020:09:43:14 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [03/Sep/2020:09:43:22 +0900] "GET /ServletTest/DownloadServlet HTTP/1.1" 200 36
+0:0:0:0:0:0:0:1 - - [03/Sep/2020:09:43:47 +0900] "GET /ServletTest/DownloadServlet HTTP/1.1" 200 36
+127.0.0.1 - - [03/Sep/2020:09:48:52 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [03/Sep/2020:09:48:57 +0900] "GET /ServletTest/DownloadServlet HTTP/1.1" 200 36

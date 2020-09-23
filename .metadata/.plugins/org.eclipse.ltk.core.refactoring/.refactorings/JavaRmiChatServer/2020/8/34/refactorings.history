@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;kr.or.ddit.rmi.inf&apos; to &apos;JavaRmiChatClient/src&apos;&#x0D;&#x0A;- Original project: &apos;JavaRmiChatServer&apos;&#x0D;&#x0A;- Destination element: &apos;JavaRmiChatClient/src&apos;&#x0D;&#x0A;- Original element: &apos;JavaRmiChatServer/src/kr.or.ddit.rmi.inf&apos;" description="Copy package" destination="=JavaRmiChatClient/src" element1="/src&lt;kr.or.ddit.rmi.inf" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1597980728644" version="1.0"/>
+</session>

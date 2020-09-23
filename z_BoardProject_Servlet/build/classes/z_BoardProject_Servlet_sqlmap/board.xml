@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할 때 같이 사용된다. -->
+<sqlMap namespace="board">
+
+<!-- C(insert) : 게시글 작성하기 -->
+<insert id="insertBoard" parameterClass="boVO">
+INSERT INTO JDBC_BOARD(BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_DATE, BOARD_CONTENT)
+VALUES(BOARD_SEQ.NEXTVAL,
+	   #board_title#,
+	   #board_writer#,
+       SYSDATE,
+       #board_content#)
+
+</insert>
+
+<!-- R(select) : 게시글 출력하기 -->
+<select id="getAllBoard" resultClass="boVO">
+SELECT * FROM JDBC_BOARD
+</select>
+
+<!-- 게시글 검색하기 -->
+<select id="getSearchBoard" resultClass="boVO">
+SELECT * FROM JDBC_BOARD WHERE 1=1
+
+<isNotEmpty property="board_no">
+AND BOARD_NO LIKE '%' || #board_no# || '%'
+</isNotEmpty>
+
+<isNotEmpty property="board_title">
+AND BOARD_TITLE LIKE '%' || #board_title# || '%'
+</isNotEmpty>
+
+<isNotEmpty property="board_writer">
+AND BOARD_WRITER LIKE '%' || #board_writer# || '%' 
+</isNotEmpty>
+
+<isNotEmpty property="board_date">
+AND BOARD_DATE = #board_date#
+</isNotEmpty>
+
+<isNotEmpty property="board_content">
+AND BOARD_CONTENT LIKE '%' || #board_content# || '%' 
+</isNotEmpty>
+
+</select>
+
+
+<!-- U(update) : 게시글 수정하기 -->
+<update id="updateBoard" parameterClass="boVO">
+UPDATE JDBC_BOARD 
+SET BOARD_TITLE = #board_title#, 
+	BOARD_WRITER = #board_writer#, 
+	BOARD_DATE = SYSDATE, 
+	BOARD_CONTENT = #board_content#
+WHERE BOARD_NO = #board_no#
+</update>
+
+<!-- D(delete) : 게시글 삭제하기 -->
+<delete id="deleteBoard" parameterClass="int">
+DELETE FROM JDBC_BOARD WHERE BOARD_NO = #board_no#
+</delete>
+
+</sqlMap>

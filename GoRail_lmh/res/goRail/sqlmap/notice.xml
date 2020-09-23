@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할때 같이 사용된다. 다른 함수와 구별하기 위해 -->
+<sqlMap namespace="notice">
+ <!-- 
+ 
+ 	이 영역에 sql문에 맞는 태그를 사용하여 sql문을 기술한다.
+ 	
+ 	사용할 수 있는 기본적인 태그들
+ 	<select> ~~~ </select>
+ 	<insert> ~~~ </insert>
+ 	<update> ~~~ </update>
+ 	<delete> ~~~ </delete>
+ 	
+ 	위 태그에서 사용되는 속성들 
+ 	1) id속성 : 해당 태그를  호출 할때 <sqlMap>태그의 namespace와 연결하여 사용하는 이름
+ 	
+ 	2) parameterClass속성: sql문에 사용될 데이터가 들어있는 객체를 지정한다. 
+ 						(보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+ 						(typeAlias로 지정한 alias명을 사용할 수 있다.)
+ 	3) resultClass속성: select문을 실행한 결과를 담을 객체를 지정한다.
+ 					 (보통 VO클래스나 자바의 자료형이름을 사용한다.)
+ 	-->
+ 	
+ 	
+ 	<!-- 공지사항 등록 -->
+ 	<insert id="InsertNotice" parameterClass="noticeVO">
+ 	
+ 	INSERT INTO NOTICE(NOTICE_NO, NOTICE_TITLE, NOTICE_CONT, NOTICE_DATE, NOTICE_CHK, ADMIN_ID)
+	  VALUES(#notice_no#, #notice_title#, #notice_cont#, SYSDATE, #notice_chk#, #admin_id#)
+ 	
+ 	</insert>
+ 	
+ 	
+ 	<!-- 공지사항수정 (파라미터: 제목, 내용) 일자=SYSDATE -->
+	<update id="UpdateNotice" parameterClass="noticeVO">
+		UPDATE NOTICE 
+	   	   SET NOTICE_TITLE = #notice_title#
+				,NOTICE_CONT =   #NOTICE_CONT#
+				,NOTICE_DATE =  SYSDATE
+	 	 WHERE NOTICE_NO = #notice_no#
+	</update>   
+ 
+	<!-- 공지사항삭제 -->
+ 	<update id="DeleteNotice" parameterClass="String">
+ 		UPDATE NOTICE 
+ 		   SET NOTICE_CHK = #notice_chk# 
+ 		 WHERE NOTICE_NO = #notice_no#
+ 	</update>
+ 	
+ 	<!-- 전체공지사항 가져오기-->
+ 	<select id="GetAllNotice" resultClass="noticeVO">
+ 		SELECT * FROM NOTICE
+ 	</select>
+ 	
+ 	<!-- 공지사항 조회 (파라미터: 등록날짜(월별 입력날짜 숫자만 따옴)) 이고 모루게뚬 -->
+ 	<select id="GetSearchMember" parameterClass="int" resultClass="noticeVO">
+ 		SELECT * FROM NOTICE WHERE TO_DATE(#date#,'YYYY/MM/DD')
+ 		
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+ 
+ 
+ 
+ 
+ 
+  
+</sqlMap>
+
+
+
+
+

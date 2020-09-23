@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- namespace속성 : 아래에서 작성한 SQL을 호출할때 같이 사용된다. 다른 함수와 구별하기 위해 -->
+<sqlMap namespace="member">
+ <!-- 
+ 
+ 	이 영역에 sql문에 맞는 태그를 사용하여 sql문을 기술한다.
+ 	
+ 	사용할 수 있는 기본적인 태그들
+ 	<select> ~~~ </select>
+ 	<insert> ~~~ </insert>
+ 	<update> ~~~ </update>
+ 	<delete> ~~~ </delete>
+ 	
+ 	위 태그에서 사용되는 속성들 
+ 	1) id속성 : 해당 태그를  호출 할때 <sqlMap>태그의 namespace와 연결하여 사용하는 이름
+ 	
+ 	2) parameterClass속성: sql문에 사용될 데이터가 들어있는 객체를 지정한다. 
+ 						(보통 VO클래스, 자바의 자료형이름 등이 사용된다.)
+ 						(typeAlias로 지정한 alias명을 사용할 수 있다.)
+ 	3) resultClass속성: select문을 실행한 결과를 담을 객체를 지정한다.
+ 					 (보통 VO클래스나 자바의 자료형이름을 사용한다.)
+ 	-->
+ 	
+ 	<!-- 로그인 (파라미터:아이디, 비밀번호)-->
+ 	<select id = "Login" resultClass="int" >
+        SELECT COUNT(*) FROM MEMBER 
+         WHERE MEM_ID = #mem_id# AND MEM_PASS = #mem_pass#
+    </select>
+    
+    <!-- 로그인 정보  (파라미터: 아이디)-->
+    <select id = "LoginInfo" resultClass="memVO">
+        SELECT * FROM MEMBER 
+         WHERE MEM_ID = #mem_id# AND MEM_PASS = #mem_pass#
+    </select>
+    
+    <!-- 아이디 찾기 (파라미터: 이름, 휴대폰번호)-->
+    <select id="SearchID" >
+    	SELECT MEM_ID FROM MEMBER 
+    	 WHERE MEM_NAME = #mem_name# 
+    	   AND MEM_TEL = #mem_tel#
+    </select>
+    
+    <!-- 비밀번호 찾기  (입력: 아이디,이름, 휴대폰번호)-->
+    <select id="SearchPW">
+    	SELECT MEM_PASS FROM MEMBER 
+    	 WHERE MEM_ID = #mem_id# 
+    	   AND MEM_NAME = #mem_name# 
+    	   AND MEM_TEL = #mem_tel#
+    </select>
+
+ 	<!-- ID 중복체크 -->
+ 	<select id="IDCheck">
+ 		SELECT COUNT(*) FROM MEMBER 
+ 		 WHERE MEM_ID = #mem_id# 
+ 	</select>
+ 	
+ 	<!-- email 중복체크 -->
+ 	<select id="EmailCheck">
+ 	
+ 	</select>
+ 	
+ 	<!-- 회원등록 -->
+ 	<insert id="InsertMember" parameterClass="memVO">
+ 	
+ 	INSERT INTO MEMBER(MEM_NO, MEM_ID, MEM_PASS, MEM_NAME, MEM_BIR, MEM_MAIL, MEM_TEL, MEM_SDATE, MEM_EDATE, MEM_CHK)
+	  VALUES(#mem_no#, #mem_id#, #mem_pass#, #mem_name#, #mem_bir#, #mem_mail#, #mem_tel#, #mem_sdate#, #mem_edate#, #mem_chk#)
+ 	
+ 	</insert>
+ 	
+ 	<!-- 회원수정 비밀번호, 휴대폰번호,이메일  -->
+	<update id="UpdateMember" parameterClass="memVO">
+		UPDATE MYMEMBER 
+	   	   SET MEM_PASS = #mem_pass#
+				,MEM_TEL =   #mem_tel#
+				,MEM_MAIL =  #mem_mail#
+	 	 WHERE MEM_ID = #mem_id#
+	</update>   
+ 
+	<!-- 회원탈퇴 -->
+ 	<update id="DeleteMember" parameterClass="String">
+ 		UPDATE MEMBER 
+ 		   SET MEM_CHK = #mem_chk# 
+ 		 WHERE MEM_ID = #MEM_ID#
+ 	</update>
+ 	
+ 	<!-- 전체회원 가져오기-->
+ 	<select id="GetMemberAll" resultClass="memVO">
+ 		SELECT * FROM MEMBER
+ 	</select>
+ 	
+ 	<!-- 관리자가 회원조회 조건: 아이디, 이름 -->
+ 	<select id="GetSearchMember" parameterClass="memVO" resultClass="memVO">
+ 		SELECT * FROM MEMBER WHERE 1=1 
+ 		
+ 		<isNotEmpty property="mem_id"> <!-- null도 아니고 ""도 아닌 != null !mv.getMem_id().equals("") -->
+ 			AND MEM_ID = #mem_id#
+ 		</isNotEmpty>
+ 		
+ 		<isNotEmpty property="mem_name"> 
+ 			AND MEM_NAME = #mem_name#
+ 		</isNotEmpty>
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+ 
+ 
+ 
+ 
+ 
+  
+</sqlMap>
+
+
+
+
+

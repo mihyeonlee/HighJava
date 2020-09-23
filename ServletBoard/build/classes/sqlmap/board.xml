@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="board">
+
+<!-- insert 게시물 추가-->
+<insert id="insertBoard" parameterClass="bdVO">
+
+	insert into jdbc_board
+	(BOARD_NO, BOARD_TITLE, BOARD_WRITER, BOARD_DATE ,BOARD_CONTENT)
+	values (board_seq.nextVal, #board_title#, #board_writer#, sysdate, #board_content#)
+
+</insert>
+
+<!-- update 게시물 수정-->
+<update id="updateBoard" parameterClass="bdVO">
+	
+	update jdbc_board
+	set board_title = #board_title#
+		,board_content = #board_content#
+	where board_no = #board_no#
+
+</update>
+
+<!-- delete 게시물 삭제-->
+<delete id="deleteBoard" parameterClass="int">
+
+	delete from jdbc_board where board_no = #board_no#
+
+</delete>
+
+ <!-- select 전체 게시물 조회-->
+  <select id="getBoardAll" resultClass="bdVO">
+  
+  		select * from jdbc_board
+  
+  </select>
+
+<!-- select -->
+<select id="getBoard" parameterClass="int" resultClass="bdVO">
+	
+	select * from jdbc_board where board_no = #board_no#
+	
+</select>
+
+<!-- select 게시물 검색 -->
+<!-- <select id="getSearchBoard" resultClass="bdVO"> -->
+
+<!-- 	select * from jdbc_board where 1=1 -->
+	
+<!-- 		<isNotEmpty property="board_title"> -->
+<!-- 			and board_title like '%' || #board_title# || '%' -->
+<!-- 		</isNotEmpty> -->
+<!-- 		<isNotEmpty property="board_writer"> -->
+<!-- 			and board_writer =?" -->
+<!-- 		</isNotEmpty> -->
+<!-- 		<isNotEmpty property="board_content"> -->
+<!-- 			and board_content like '%' || #board_content# | '%' -->
+<!-- 		</isNotEmpty> -->
+
+
+
+<!-- </select> -->
+
+</sqlMap>

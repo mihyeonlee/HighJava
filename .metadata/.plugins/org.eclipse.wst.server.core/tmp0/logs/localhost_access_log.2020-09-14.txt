@@ -1,0 +1,3 @@
+127.0.0.1 - - [14/Sep/2020:21:35:03 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [14/Sep/2020:21:35:03 +0900] "GET /boardHandler/*.do HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [14/Sep/2020:21:35:16 +0900] "GET /boardHandler/WEB-INF/classes/board/handler/InsertBoardBoardHandler.java HTTP/1.1" 404 949

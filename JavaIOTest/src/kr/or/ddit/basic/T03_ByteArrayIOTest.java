@@ -1,0 +1,44 @@
+package kr.or.ddit.basic;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class T03_ByteArrayIOTest {
+	public static void main(String[] args) {
+		byte[] inSrc = {0,1,2,3,4,5,6,7,8,9};
+		byte[] outSrc = null;
+		
+		//스트림 선언 및 객체 생성
+		// 언제 뭘 써야하나. 프로그램기준으로 뭘 읽어와야하면 inputstream 출력하면 outputstream
+		ByteArrayInputStream bais = null; // 스트림 선언
+		bais = new ByteArrayInputStream(inSrc); //객체 생성
+		
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		
+		int data; //읽어온 자료를 저장할 변수
+		
+		//읽어주는 메서드 1Byte씩 읽는다. 읽은 데이터가 리턴된다.
+		//read() 메서드 => byte단위로 자료를 읽어와 int형으로 반환한다. 
+		//   		  => 더 이상 읽을 자료가 없으면 -1을 반환한다. 때문에 int타입으로 받아준다.
+		while((data = bais.read()) != -1) {
+			baos.write(data); //출력하기
+		}
+		
+		//출력된 스트림 값들을 배열로 변환해서 반환하는 메서드
+		outSrc = baos.toByteArray();
+		
+		System.out.println("inSrc => "+Arrays.toString(inSrc));
+		System.out.println("outSrc => "+ Arrays.toString(outSrc));
+		
+		try {
+			// 스트림 객체 닫아주기
+			bais.close();
+			baos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="8" key="DIALOG_X_ORIGIN"/>
+		<item value="90" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="250" key="dialogHeight"/>
+		<item value="350" key="dialogWidth"/>
+		<list key="textEntries">
+			<item value="1"/>
+			<item value="1"/>
+		</list>
+		<list key="orderedElements">
+			<item value="org.eclipse.jdt.ui.edit.text.java.generate.tostring"/>
+			<item value="org.eclipse.jdt.ui.edit.text.java.create.getter.setter"/>
+		</list>
+		<list key="orderedProviders">
+			<item value="org.eclipse.ui.commands"/>
+			<item value="org.eclipse.ui.commands"/>
+		</list>
+		<list key="textArray">
+			<item value="tostr"/>
+			<item value="getter"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jpt.jpa"/>
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="FileSystemExportWizard">
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_RESOLVE_LINKED_RESOURCES_ID"/>
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\PC-03\Desktop"/>
+			<item value="202005_이미현"/>
+			<item value="C:\Users\PC-03"/>
+			<item value="C:\Users\PC-03\Desktop\새 폴더"/>
+			<item value="C:\Users\PC-03\Desktop\202005_이미현"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.export.ZipFile" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.Java"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+		</list>
+	</section>
+	<section name="ZipFileImportWizard">
+		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="\\sem\공유폴더\고급자바\고급자바과제템플릿\JavaCollectionFramework\호텔운영프로그램\202005_김미연\202005_김미연.zip"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+	<section name="ZipFileExportWizard">
+		<item value="false" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
+		<item value="false" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\PC-03\Google 드라이브\프로젝트\중급프로젝트 3조\클래스정의2.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\프로젝트\중급프로젝트 3조\클래스정의.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\숙제\완성된게시판핸들러.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\게시판핸들러최종.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\서블릿 최종.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\숙제모음.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\게시판핸들러.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\서서블릿.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\서블릿2.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\서블릿.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\ser.zip"/>
+			<item value="C:\Users\PC-03\Desktop\Hotel2.java"/>
+			<item value="C:\Users\PC-03\Desktop\Hotel.java"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\2020.08.12.zip"/>
+			<item value="\\sem\공유폴더\고급자바\고급자바과제템플릿\JavaCollectionFramework\로또출력프로그램\202005_이미현\202005_이미현_로또출력.zip"/>
+			<item value="\\sem\공유폴더\고급자바\고급자바과제템플릿\JavaCollectionFramework\로또출력프로그램\202005_이미현\202005_이미현_로또프로그램.zip"/>
+			<item value="C:\Users\PC-03\Desktop\고급자바과제템플릿\JavaCollectionFramework\로또출력프로그램\202005_이미현\로또출력프로그램.zip"/>
+			<item value="C:\Users\PC-03\Google 드라이브\JAVA\고급자바\20200714.zip"/>
+		</list>
+	</section>
+</section>
